@@ -1,0 +1,39 @@
+
+<div class="replace_html">
+<h2> Here are your created events </h2>
+
+<ul class="created_events">
+  <%if @events_created%>
+<%@events_created.each do |event|%>
+<li><a href='/events/<%=event.id%>'><%=event.name%></li><a>
+<%end%>
+</ul>
+<%else%>
+<p>No events to display! Please add an event</p>
+<%end%>
+
+<h2> Here are your attended events </h2>
+
+<ul class="updated_events">
+  <%if @events_updated%>
+<%@events_updated.each do |event|%>
+<li><a href='/events/<%=event.id%>'><%=event.name%></li><a>
+<%end%>
+</ul>
+<%else%>
+<p>No Events to display!.Please add an event.</p>
+<%end%>
+</div>
+<br>
+<button name="create_event" class="create_event"> Create Event</button><br>
+
+<a href='/logout'> Logout!</a>
+<form id ="myForm" action ='/create_event' method='post'>
+  <input type="text" name="name" placeholder="name"><br><br>
+  <input type="text" name="location" placeholder="location"><br><br>
+  <input type="datetime" name="starts_at" placeholder="starts at"><br><br>
+  <input type="datetime" name="ends_at" placeholder="ends at"><br><br>
+  <input type="text" name="attended" placeholder="Attended?"><br><br>
+  <input type="submit" value="submit">
+</form>
+

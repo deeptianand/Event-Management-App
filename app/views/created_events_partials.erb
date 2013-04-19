@@ -1,0 +1,17 @@
+<h2> Here are your created events </h2>
+<ul class="created_events">
+<%@user.created_events.each do |event|%>
+<li><a href='/events/<%=event.id%>'><%=event.name%></li><a>
+<%end%>
+</ul>
+
+
+<h2> Here are your attended events </h2>
+
+<ul class="updated_events">
+  
+<%@user.attented_events.each do |event|%>
+<li><a href='/events/<%=event.id%>'><%=event.name%></li><a>
+<%end%>
+</ul>
+

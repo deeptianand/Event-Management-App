@@ -1,0 +1,10 @@
+
+<h2> Here are the event details </h2>
+<%=@event.name%><br>
+<%=@event.location%><br>
+<%=@event.starts_at%><br>
+<%=@event.ends_at%><br>
+
+<a href ='/delete_event/<%=@event.id%>'> Delete</a><br>
+<a href ='/edit_event/<%=@event.id%>'> Edit</a>
+
